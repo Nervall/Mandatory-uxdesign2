@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="quiz.js" defer></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="quiz.css" rel="stylesheet">
+    <title>Quiz</title>
+</head>
+<body>
+    <div class="quiz-sidenav-background"></div>
+    <div class="quiz-wrapper">
+        <div id="mySidenav" class="sidenav" role="navigation" aria-label="navigation">
+            <div class="quiz-sidenav__header"><h1>Quiz Master</h1>
+            Become a master of quizzez!</div>
+            <a href="#" class="quiz__link--quiz">Start Quiz</a>
+            <a href="#" class="quiz__link--stats">Stats</a>
+            <a href="#" class="quiz__link--about">About this app</a>
+        </div>
+        <header>
+            <span class="quiz__header--icon" tabindex="0" onclick="openNav()"><i class="material-icons" role="menu" aria-label="Open Menu">menu</i></span>
+            <span class="quiz__header--title" role="application" aria-label="application name">Quiz Master</span>
+        </header>
+        <main> 
+        </main>
+    </div>
+    <!-- The Modal -->
+    <div id="modal" class="quiz-background" role="dialog" aria-label="dialog">
+        <!-- Modal content -->
+        <div class="modal-wrapper">
+          <div class="modal-header">
+          </div>
+          <div class="modal-content">
+          </div>
+          <div class="modal-footer">
+          </div>
+        </div>
+      </div>
+</body>
+</html>
