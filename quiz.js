@@ -69,6 +69,11 @@ function randomize(data) {
   quiz(dataArr)
 }
 
+function getHtml(input) {
+  const parser = new DOMParser().parseFromString(input, 'text/html');
+  return parser.documentElement.textContent;
+}
+
 /* ========== RENDER QUIZ ========== */
 function quiz(dataArr) {
   main.innerHTML = ''; 
@@ -89,18 +94,19 @@ function quiz(dataArr) {
     questionNumber.setAttribute('tabindex', '0');
     const category = document.createElement('p');
     category.setAttribute('class', 'quiz-main__category');
-    category.textContent = 'Category: ' + quizData.category[count];
+    category.textContent = 'Category: ' + getHtml(quizData.category[count]);
     const question = document.createElement('p');
     question.setAttribute('class', 'quiz-main__question');
     question.setAttribute('tabindex', '0');
-    question.innerHTML = quizData.question[count];
+    question.textContent = getHtml(quizData.question[count]);
+    
 
     const questionDiv1 = document.createElement('div');
     const radioLabel1 = document.createElement('label');
     const radioInput1 = document.createElement('input');
     const radioSpan1 = document.createElement('span');
     radioLabel1.setAttribute('class', 'mds-radio');
-    radioLabel1.innerHTML = dataArr[i][0];
+    radioLabel1.textContent = getHtml(dataArr[i][0]);
     radioInput1.setAttribute('type', 'radio');
     radioInput1.setAttribute('class', 'mds-radio__input');
     radioInput1.setAttribute('name', 'quiz'+ quizNumber);
@@ -112,7 +118,7 @@ function quiz(dataArr) {
     const radioInput2 = document.createElement('input');
     const radioSpan2 = document.createElement('span');
     radioLabel2.setAttribute('class', 'mds-radio');
-    radioLabel2.innerHTML = dataArr[i][1];
+    radioLabel2.textContent = getHtml(dataArr[i][1]);
     radioInput2.setAttribute('type', 'radio');
     radioInput2.setAttribute('class', 'mds-radio__input');
     radioInput2.setAttribute('name', 'quiz'+ quizNumber);
@@ -124,7 +130,7 @@ function quiz(dataArr) {
     const radioInput3 = document.createElement('input');
     const radioSpan3 = document.createElement('span');
     radioLabel3.setAttribute('class', 'mds-radio');
-    radioLabel3.innerHTML = dataArr[i][2];
+    radioLabel3.textContent = getHtml(dataArr[i][2]);
     radioInput3.setAttribute('type', 'radio');
     radioInput3.setAttribute('class', 'mds-radio__input');
     radioInput3.setAttribute('name', 'quiz'+ quizNumber);
@@ -136,7 +142,7 @@ function quiz(dataArr) {
     const radioInput4 = document.createElement('input');
     const radioSpan4 = document.createElement('span');
     radioLabel4.setAttribute('class', 'mds-radio');
-    radioLabel4.innerHTML = dataArr[i][3];
+    radioLabel4.textContent = getHtml(dataArr[i][3]);
     radioInput4.setAttribute('type', 'radio');
     radioInput4.setAttribute('class', 'mds-radio__input');
     radioInput4.setAttribute('name', 'quiz'+ quizNumber);
